@@ -9,5 +9,7 @@
   "keywords": [],
   "author": "lintry <shenlin00@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "chalk": "^2.3.2"
+  }
 }

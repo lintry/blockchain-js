@@ -4,24 +4,29 @@
  */
 
 const Block = require('../lib/block')
+const chalk = require('chalk')
 
-const genesis = new Block(0,
-    '0',
-    1523859505912,
-    'First Block in the world!',
-    '0000d4e1bc1da1efc882323f4521275efa40b38ae19648db8adf0c758d8df1a0',
-    32058)
-console.log('this genesis is ', genesis.isValidBlock())
+const genesis = new Block({
+    index: 0,
+    prev_hash: '0',
+    timestamp: 1523873300662,
+    data: 'First Block in the world!',
+    hash: '000099819b66c5f9aabb01110e1db09abb4f63036b8e8768791cb71d316b6c3b',
+    nonce: 2725
+})
+console.log(chalk.cyan('this genesis is '), genesis.isValidBlock())
 
-const found = new Block(1,
-    '0000d4e1bc1da1efc882323f4521275efa40b38ae19648db8adf0c758d8df1a0',
-    1523859579993,
-    'I have a pen✏️',
-    '0000524134d00f6dde40aa14dc25c52f2f5b9fe13b25f4d8ac5060f38eca333d',
-    51142)
+const found = new Block({
+    index: 1,
+    prev_hash: '000099819b66c5f9aabb01110e1db09abb4f63036b8e8768791cb71d316b6c3b',
+    timestamp: 1523873300809,
+    data: 'I have a pen✏️',
+    hash: '00009147aa804135985297fb75d9a515240e7c0abed7132baa1350a0641f0665',
+    nonce: 103432
+})
 
-console.log('this block is ', found.isValidBlock())
+console.log(chalk.cyan('this block is '), found.isValidBlock())
 
-const dig = genesis.dig('I have an apple🍎️')
+const dig = found.dig('I have an apple🍎️')
 
-console.log('I got ', dig)
+console.log(chalk.magenta('I got '), dig)

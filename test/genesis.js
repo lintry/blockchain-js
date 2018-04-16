@@ -4,8 +4,10 @@
  */
 
 const Block = require('../lib/block')
-
+const chalk = require('chalk')
 
 const genesis = Block.genesis
 
-console.log('Genesis block is', genesis)
+console.log(chalk.cyan('Genesis block is'), genesis)
+
+console.log(chalk.blue('dig new block'), genesis.dig('I have a pen✏️'))
