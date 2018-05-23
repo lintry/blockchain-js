@@ -5,11 +5,12 @@ nodejs模拟区块链概念
 ## 区块定义
 
 + index：当前区块在链中的位置
-+ prev_hash：上一个区块的Hash
 + timestamp：区块的创建时间戳
-+ data = data：区块的内容
-+ nonce = nonce：计算一个有效Hash所用的次数
-+ hash = hash：区块的hash = sha256([index,prev_hash,timestamp,data,nonce].sort.join(''))
++ data：区块的内容
++ nonce：计算一个有效Hash所用的次数
++ difficulty: hash计算的复杂度
++ prev_hash：上一个区块的Hash
++ hash：区块的hash = sha256([index,prev_hash,timestamp,data,nonce].sort.join(''))
 
 ## 区块链定义
 
@@ -25,4 +26,3 @@ nodejs模拟区块链概念
 
 - 怎样分叉？
 - 怎样实现从一个区块并发后，产生多个链，解决唯一性的问题（最先达到6个区块的链保留，其余丢弃）
-- ​
